@@ -19,6 +19,7 @@ class AppStore(Base):
         log_format="%(asctime)s [%(levelname)s] %(name)s - %(message)s",
         log_level="INFO",
         log_interval=5,
+        proxies=None
     ):
         super().__init__(
             country=country,
@@ -27,6 +28,7 @@ class AppStore(Base):
             log_format=log_format,
             log_level=log_level,
             log_interval=log_interval,
+            proxies=proxies
         )
 
         # override

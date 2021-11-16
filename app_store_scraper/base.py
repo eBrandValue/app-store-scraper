@@ -32,6 +32,7 @@ class Base:
         country,
         app_name,
         app_id=None,
+        proxies=None,
         log_format="%(asctime)s [%(levelname)s] %(name)s - %(message)s",
         log_level="INFO",
         log_interval=5,
@@ -46,7 +47,7 @@ class Base:
             logger.info("Searching for app id")
             app_id = self.search_id()
         self.app_id = int(app_id)
-
+        self.proxies = proxies
         self.url = self._landing_url()
 
         self.reviews = list()
@@ -122,7 +123,15 @@ class Base:
         with requests.Session() as s:
             s.mount(self._base_request_url, HTTPAdapter(max_retries=retries))
             logger.debug(f"Making a GET request: {url}")
-            self._response = s.get(url, headers=headers, params=params)
+            while True:
+                try:
+                    print("Proxy: {}".format(self.proxies))
+                    self._response = s.get(url, proxies=self.proxies, headers=headers, params=params, timeout=60)
+                    if self._response:
+                        break
+                except Exception as e:
+                    print("Try with proxy one more time")
+                    print(e)
 
     def _token(self):
         self._get(self.url)
