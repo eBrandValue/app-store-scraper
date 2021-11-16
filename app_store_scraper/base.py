@@ -125,7 +125,6 @@ class Base:
             logger.debug(f"Making a GET request: {url}")
             while True:
                 try:
-                    print("Proxy: {}".format(self.proxies))
                     self._response = s.get(url, proxies=self.proxies, headers=headers, params=params, timeout=60)
                     if self._response:
                         break
