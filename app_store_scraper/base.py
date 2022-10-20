@@ -111,8 +111,8 @@ class Base:
         url,
         headers=None,
         params=None,
-        total=3,
-        backoff_factor=3,
+        total=5,
+        backoff_factor=5,
         status_forcelist=[404, 429],
     ) -> requests.Response:
         retries = Retry(
@@ -123,14 +123,8 @@ class Base:
         with requests.Session() as s:
             s.mount(self._base_request_url, HTTPAdapter(max_retries=retries))
             logger.debug(f"Making a GET request: {url}")
-            while True:
-                try:
-                    self._response = s.get(url, proxies=self.proxies, headers=headers, params=params, timeout=60)
-                    if self._response:
-                        break
-                except Exception as e:
-                    print("Try with proxy one more time")
-                    print(e)
+            logger.info(f"Using proxy: {self.proxies}")
+            self._response = s.get(url, headers=headers, params=params, proxies=self.proxies)
 
     def _token(self):
         self._get(self.url)

@@ -4,18 +4,6 @@
 ![downloads](https://img.shields.io/pypi/dm/app-store-scraper)
 ![license](https://img.shields.io/pypi/l/app-store-scraper)
 ![code style](https://img.shields.io/badge/code%20style-black-black)
-
-```
-   ___                _____ _                   _____
-  / _ \              /  ___| |                 /  ___|
- / /_\ \_ __  _ __   \ `--.| |_ ___  _ __ ___  \ `--.  ___ _ __ __ _ _ __   ___ _ __
- |  _  | '_ \| '_ \   `--. \ __/ _ \| '__/ _ \  `--. \/ __| '__/ _` | '_ \ / _ \ '__|
- | | | | |_) | |_) | /\__/ / || (_) | | |  __/ /\__/ / (__| | | (_| | |_) |  __/ |
- \_| |_/ .__/| .__/  \____/ \__\___/|_|  \___| \____/ \___|_|  \__,_| .__/ \___|_|
-       | |   | |                                                    | |
-       |_|   |_|                                                    |_|
-```
-
 # Quickstart
 
 Install:
