@@ -24,7 +24,7 @@ class Base:
         # NOTE: grab from https://bit.ly/2zu0cmU
         "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)",
         "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko",
-        "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)",
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Mobile/15E148 Safari/604.1"
     ]
 
     def __init__(
