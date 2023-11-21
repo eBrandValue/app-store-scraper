@@ -111,12 +111,14 @@ class Base:
         url,
         headers=None,
         params=None,
-        total=5,
-        backoff_factor=5,
-        status_forcelist=[404, 429],
+        total=20,
+        other=10,
+        backoff_factor=0.2,
+        status_forcelist=[413, 404, 429],
     ) -> requests.Response:
         retries = Retry(
             total=total,
+            other=other,
             backoff_factor=backoff_factor,
             status_forcelist=status_forcelist,
         )
