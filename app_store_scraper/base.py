@@ -65,6 +65,7 @@ class Base:
             "Authorization": self._token(),
             "Connection": "keep-alive",
             "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "Origin": self._base_landing_url,
             "User-Agent": random.choice(self._user_agents),
         }
         self._request_params = {}
